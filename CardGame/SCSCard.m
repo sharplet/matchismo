@@ -14,4 +14,14 @@
 
 @implementation SCSCard
 
+-(NSInteger)match:(NSArray *)otherCards {
+    NSInteger score = 0;
+    for (SCSCard * card in otherCards) {
+        if ([card.contents isEqualToString:self.contents]) {
+            score = 1;
+        }
+    }
+    return score;
+}
+
 @end
