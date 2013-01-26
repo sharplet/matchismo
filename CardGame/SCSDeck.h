@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SCSCard.h"
 
 @interface SCSDeck : NSObject
-
+-(void)addCard:(SCSCard *)card atTop:(BOOL)atTop;
+-(SCSCard *)drawRandomCard;
 @end
