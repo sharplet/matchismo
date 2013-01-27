@@ -63,7 +63,7 @@
 		4AA9928E16B3757600464580 = {
 			isa = PBXGroup;
 			children = (
-				4AA992A316B3757600464580 /* CardGame */,
+				4AA992A316B3757600464580 /* Matchismo */,
 				4AA9929C16B3757600464580 /* Frameworks */,
 				4AA9929A16B3757600464580 /* Products */,
 			);
@@ -87,7 +87,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4AA992A316B3757600464580 /* CardGame */ = {
+		4AA992A316B3757600464580 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
 				4AA992A416B3757600464580 /* Supporting Files */,
@@ -102,7 +102,7 @@
 				4AEEF3A516B3765D006D8012 /* SCSPlayingCardDeck.h */,
 				4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */,
 			);
-			path = CardGame;
+			path = Matchismo;
 			sourceTree = "<group>";
 		};
 		4AA992A416B3757600464580 /* Supporting Files */ = {
@@ -135,7 +135,7 @@
 			dependencies = (
 			);
 			name = Matchismo;
-			productName = CardGame;
+			productName = Matchismo;
 			productReference = 4AA9929916B3757600464580 /* Matchismo.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -262,8 +262,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CardGame/Matchismo-Prefix.pch";
-				INFOPLIST_FILE = "CardGame/Matchismo-Info.plist";
+				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Matchismo/Matchismo-Info.plist";
 				PRODUCT_NAME = Matchismo;
 				WRAPPER_EXTENSION = app;
 			};
@@ -273,8 +273,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CardGame/Matchismo-Prefix.pch";
-				INFOPLIST_FILE = "CardGame/Matchismo-Info.plist";
+				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Matchismo/Matchismo-Info.plist";
 				PRODUCT_NAME = Matchismo;
 				WRAPPER_EXTENSION = app;
 			};
