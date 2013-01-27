@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SCSDeck.h"
 
-@interface SCSPlayingCardDeck : NSObject
+@interface SCSPlayingCardDeck : SCSDeck
 
 @end
