@@ -23,14 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4AA9929916B3757600464580 /* CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA9929916B3757600464580 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA9929D16B3757600464580 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4AA9929F16B3757600464580 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4AA992A116B3757600464580 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4AA992A516B3757600464580 /* CardGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardGame-Info.plist"; sourceTree = "<group>"; };
+		4AA992A516B3757600464580 /* Matchismo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Matchismo-Info.plist"; sourceTree = "<group>"; };
 		4AA992A716B3757600464580 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AA992A916B3757600464580 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4AA992AB16B3757600464580 /* CardGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardGame-Prefix.pch"; sourceTree = "<group>"; };
+		4AA992AB16B3757600464580 /* Matchismo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Matchismo-Prefix.pch"; sourceTree = "<group>"; };
 		4AA992AC16B3757600464580 /* SCSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCSAppDelegate.h; sourceTree = "<group>"; };
 		4AA992AD16B3757600464580 /* SCSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCSAppDelegate.m; sourceTree = "<group>"; };
 		4AA992AF16B3757600464580 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		4AA9929A16B3757600464580 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4AA9929916B3757600464580 /* CardGame.app */,
+				4AA9929916B3757600464580 /* Matchismo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,10 +108,10 @@
 		4AA992A416B3757600464580 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4AA992A516B3757600464580 /* CardGame-Info.plist */,
+				4AA992A516B3757600464580 /* Matchismo-Info.plist */,
 				4AA992A616B3757600464580 /* InfoPlist.strings */,
 				4AA992A916B3757600464580 /* main.m */,
-				4AA992AB16B3757600464580 /* CardGame-Prefix.pch */,
+				4AA992AB16B3757600464580 /* Matchismo-Prefix.pch */,
 				4AA992AF16B3757600464580 /* Default.png */,
 				4AA992B116B3757600464580 /* Default@2x.png */,
 				4AA992B316B3757600464580 /* Default-568h@2x.png */,
@@ -122,9 +122,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4AA9929816B3757600464580 /* CardGame */ = {
+		4AA9929816B3757600464580 /* Matchismo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4AA992B716B3757600464580 /* Build configuration list for PBXNativeTarget "CardGame" */;
+			buildConfigurationList = 4AA992B716B3757600464580 /* Build configuration list for PBXNativeTarget "Matchismo" */;
 			buildPhases = (
 				4AA9929516B3757600464580 /* Sources */,
 				4AA9929616B3757600464580 /* Frameworks */,
@@ -134,9 +134,9 @@
 			);
 			dependencies = (
 			);
-			name = CardGame;
+			name = Matchismo;
 			productName = CardGame;
-			productReference = 4AA9929916B3757600464580 /* CardGame.app */;
+			productReference = 4AA9929916B3757600464580 /* Matchismo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Adam Sharp";
 			};
-			buildConfigurationList = 4AA9929316B3757600464580 /* Build configuration list for PBXProject "CardGame" */;
+			buildConfigurationList = 4AA9929316B3757600464580 /* Build configuration list for PBXProject "Matchismo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4AA9929816B3757600464580 /* CardGame */,
+				4AA9929816B3757600464580 /* Matchismo */,
 			);
 		};
 /* End PBXProject section */
@@ -262,9 +262,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CardGame/CardGame-Prefix.pch";
-				INFOPLIST_FILE = "CardGame/CardGame-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CardGame/Matchismo-Prefix.pch";
+				INFOPLIST_FILE = "CardGame/Matchismo-Info.plist";
+				PRODUCT_NAME = Matchismo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -273,9 +273,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CardGame/CardGame-Prefix.pch";
-				INFOPLIST_FILE = "CardGame/CardGame-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CardGame/Matchismo-Prefix.pch";
+				INFOPLIST_FILE = "CardGame/Matchismo-Info.plist";
+				PRODUCT_NAME = Matchismo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -283,7 +283,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4AA9929316B3757600464580 /* Build configuration list for PBXProject "CardGame" */ = {
+		4AA9929316B3757600464580 /* Build configuration list for PBXProject "Matchismo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AA992B516B3757600464580 /* Debug */,
@@ -292,7 +292,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AA992B716B3757600464580 /* Build configuration list for PBXNativeTarget "CardGame" */ = {
+		4AA992B716B3757600464580 /* Build configuration list for PBXNativeTarget "Matchismo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AA992B816B3757600464580 /* Debug */,
