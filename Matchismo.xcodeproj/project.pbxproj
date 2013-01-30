@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1C6FAF16B9261700FA0A77 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C6FAE16B9261700FA0A77 /* MainStoryboard.storyboard */; };
+		4A1C6FB216B9269700FA0A77 /* SCSCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C6FB116B9269700FA0A77 /* SCSCardGameViewController.m */; };
 		4AA9929E16B3757600464580 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA9929D16B3757600464580 /* UIKit.framework */; };
 		4AA992A016B3757600464580 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA9929F16B3757600464580 /* Foundation.framework */; };
 		4AA992A216B3757600464580 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA992A116B3757600464580 /* CoreGraphics.framework */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A1C6FAE16B9261700FA0A77 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4A1C6FB016B9269700FA0A77 /* SCSCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSCardGameViewController.h; sourceTree = "<group>"; };
+		4A1C6FB116B9269700FA0A77 /* SCSCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSCardGameViewController.m; sourceTree = "<group>"; };
 		4AA9929916B3757600464580 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA9929D16B3757600464580 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4AA9929F16B3757600464580 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +65,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A1C6FAD16B925FE00FA0A77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AEEF39C16B37607006D8012 /* SCSCard.h */,
+				4AEEF39D16B37607006D8012 /* SCSCard.m */,
+				4AEEF39F16B3762A006D8012 /* SCSDeck.h */,
+				4AEEF3A016B3762A006D8012 /* SCSDeck.m */,
+				4AEEF3A216B37648006D8012 /* SCSPlayingCard.h */,
+				4AEEF3A316B37648006D8012 /* SCSPlayingCard.m */,
+				4AEEF3A516B3765D006D8012 /* SCSPlayingCardDeck.h */,
+				4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4AA9928E16B3757600464580 = {
 			isa = PBXGroup;
 			children = (
@@ -90,17 +110,11 @@
 		4AA992A316B3757600464580 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				4A1C6FAD16B925FE00FA0A77 /* Model */,
 				4AA992A416B3757600464580 /* Supporting Files */,
-				4AA992AC16B3757600464580 /* SCSAppDelegate.h */,
-				4AA992AD16B3757600464580 /* SCSAppDelegate.m */,
-				4AEEF39C16B37607006D8012 /* SCSCard.h */,
-				4AEEF39D16B37607006D8012 /* SCSCard.m */,
-				4AEEF39F16B3762A006D8012 /* SCSDeck.h */,
-				4AEEF3A016B3762A006D8012 /* SCSDeck.m */,
-				4AEEF3A216B37648006D8012 /* SCSPlayingCard.h */,
-				4AEEF3A316B37648006D8012 /* SCSPlayingCard.m */,
-				4AEEF3A516B3765D006D8012 /* SCSPlayingCardDeck.h */,
-				4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */,
+				4A1C6FAE16B9261700FA0A77 /* MainStoryboard.storyboard */,
+				4A1C6FB016B9269700FA0A77 /* SCSCardGameViewController.h */,
+				4A1C6FB116B9269700FA0A77 /* SCSCardGameViewController.m */,
 			);
 			path = Matchismo;
 			sourceTree = "<group>";
@@ -108,6 +122,8 @@
 		4AA992A416B3757600464580 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AA992AC16B3757600464580 /* SCSAppDelegate.h */,
+				4AA992AD16B3757600464580 /* SCSAppDelegate.m */,
 				4AA992A516B3757600464580 /* Matchismo-Info.plist */,
 				4AA992A616B3757600464580 /* InfoPlist.strings */,
 				4AA992A916B3757600464580 /* main.m */,
@@ -175,6 +191,7 @@
 				4AA992B016B3757600464580 /* Default.png in Resources */,
 				4AA992B216B3757600464580 /* Default@2x.png in Resources */,
 				4AA992B416B3757600464580 /* Default-568h@2x.png in Resources */,
+				4A1C6FAF16B9261700FA0A77 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +208,7 @@
 				4AEEF3A116B3762A006D8012 /* SCSDeck.m in Sources */,
 				4AEEF3A416B37648006D8012 /* SCSPlayingCard.m in Sources */,
 				4AEEF3A716B3765D006D8012 /* SCSPlayingCardDeck.m in Sources */,
+				4A1C6FB216B9269700FA0A77 /* SCSCardGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
