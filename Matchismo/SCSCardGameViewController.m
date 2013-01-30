@@ -9,14 +9,22 @@
 #import "SCSCardGameViewController.h"
 
 @interface SCSCardGameViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
+@property (nonatomic) NSUInteger flipCount;
 @end
 
 @implementation SCSCardGameViewController
 
+-(void)setFlipCount:(NSUInteger)flipCount
+{
+    _flipCount = flipCount;
+    self.flipCountLabel.text = [NSString stringWithFormat:@"Flips: %d", _flipCount];
+}
+
 - (IBAction)flipCard:(UIButton *)sender
 {
     sender.selected = !sender.isSelected;
+    self.flipCount++;
 }
 
 @end
