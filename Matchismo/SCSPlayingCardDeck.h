@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SCSDeck.h"
+#import "SCSPlayingCard.h"
 
 @interface SCSPlayingCardDeck : SCSDeck
-
+-(SCSPlayingCard *)drawRandomCard;
 @end
