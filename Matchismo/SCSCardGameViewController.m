@@ -7,6 +7,7 @@
 //
 
 #import "SCSCardGameViewController.h"
+#import "SCSPlayingCard.h"
 
 @interface SCSCardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
@@ -14,6 +15,14 @@
 @end
 
 @implementation SCSCardGameViewController
+
+-(SCSPlayingCardDeck *)deck
+{
+    if (!_deck) {
+        _deck = [[SCSPlayingCardDeck alloc] init];
+    }
+    return _deck;
+}
 
 -(void)setFlipCount:(NSUInteger)flipCount
 {
@@ -24,6 +33,10 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
     sender.selected = !sender.isSelected;
+    if (sender.isSelected) {
+        SCSPlayingCard *card = [self.deck drawRandomCard];
+        [sender setTitle:card.contents forState:UIControlStateSelected];
+    }
     self.flipCount++;
 }
 
