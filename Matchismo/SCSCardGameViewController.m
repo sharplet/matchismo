@@ -26,6 +26,15 @@
     return _deck;
 }
 
+-(void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    for (UIButton *button in self.cardButtons) {
+        SCSCard *card = [self.deck drawRandomCard];
+        [button setTitle:card.contents forState:UIControlStateSelected];
+    }
+}
+
 -(void)setFlipCount:(NSUInteger)flipCount
 {
     _flipCount = flipCount;
@@ -35,10 +44,6 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
     sender.selected = !sender.isSelected;
-    if (sender.isSelected) {
-        SCSCard *card = [self.deck drawRandomCard];
-        [sender setTitle:card.contents forState:UIControlStateSelected];
-    }
     self.flipCount++;
 }
 
