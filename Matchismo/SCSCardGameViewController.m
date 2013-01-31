@@ -8,15 +8,17 @@
 
 #import "SCSCardGameViewController.h"
 #import "SCSCard.h"
+#import "SCSDeck.h"
 
 @interface SCSCardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
 @property (nonatomic) NSUInteger flipCount;
+@property (strong, nonatomic) SCSDeck *deck;
 @end
 
 @implementation SCSCardGameViewController
 
--(SCSPlayingCardDeck *)deck
+-(SCSDeck *)deck
 {
     if (!_deck) {
         _deck = [[SCSPlayingCardDeck alloc] init];
