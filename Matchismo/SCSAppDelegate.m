@@ -1,6 +1,6 @@
 //
 //  SCSAppDelegate.m
-//  CardGame
+//  Matchismo
 //
 //  Created by Adam Sharp on 26/01/13.
 //  Copyright (c) 2013 Adam Sharp. All rights reserved.
@@ -12,10 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
