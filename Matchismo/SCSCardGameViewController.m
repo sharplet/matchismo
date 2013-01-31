@@ -7,7 +7,7 @@
 //
 
 #import "SCSCardGameViewController.h"
-#import "SCSPlayingCard.h"
+#import "SCSCard.h"
 
 @interface SCSCardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
@@ -34,7 +34,7 @@
 {
     sender.selected = !sender.isSelected;
     if (sender.isSelected) {
-        SCSPlayingCard *card = [self.deck drawRandomCard];
+        SCSCard *card = [self.deck drawRandomCard];
         [sender setTitle:card.contents forState:UIControlStateSelected];
     }
     self.flipCount++;

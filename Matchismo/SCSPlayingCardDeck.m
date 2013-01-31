@@ -7,6 +7,7 @@
 //
 
 #import "SCSPlayingCardDeck.h"
+#import "SCSPlayingCard.h"
 
 @interface SCSPlayingCardDeck()
 
@@ -26,11 +27,6 @@
         }
     }
     return self;
-}
-
--(SCSPlayingCard *)drawRandomCard
-{
-    return (SCSPlayingCard *)[super drawRandomCard];
 }
 
 @end
