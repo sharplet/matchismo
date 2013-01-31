@@ -22,6 +22,7 @@
 		4AEEF3A116B3762A006D8012 /* SCSDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEEF3A016B3762A006D8012 /* SCSDeck.m */; };
 		4AEEF3A416B37648006D8012 /* SCSPlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEEF3A316B37648006D8012 /* SCSPlayingCard.m */; };
 		4AEEF3A716B3765D006D8012 /* SCSPlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */; };
+		CE4620A016BB0DD600A80DC2 /* SCSCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		4AEEF3A316B37648006D8012 /* SCSPlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSPlayingCard.m; sourceTree = "<group>"; };
 		4AEEF3A516B3765D006D8012 /* SCSPlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSPlayingCardDeck.h; sourceTree = "<group>"; };
 		4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSPlayingCardDeck.m; sourceTree = "<group>"; };
+		CE46209E16BB0DD600A80DC2 /* SCSCardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSCardMatchingGame.h; sourceTree = "<group>"; };
+		CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSCardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				4AEEF3A316B37648006D8012 /* SCSPlayingCard.m */,
 				4AEEF3A516B3765D006D8012 /* SCSPlayingCardDeck.h */,
 				4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */,
+				CE46209E16BB0DD600A80DC2 /* SCSCardMatchingGame.h */,
+				CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				4AEEF3A416B37648006D8012 /* SCSPlayingCard.m in Sources */,
 				4AEEF3A716B3765D006D8012 /* SCSPlayingCardDeck.m in Sources */,
 				4A1C6FB216B9269700FA0A77 /* SCSCardGameViewController.m in Sources */,
+				CE4620A016BB0DD600A80DC2 /* SCSCardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
