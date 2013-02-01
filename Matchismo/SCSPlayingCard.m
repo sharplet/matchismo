@@ -39,6 +39,23 @@ static NSArray * RANK_STRINGS = nil;
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
 }
 
+#pragma mark - Matching cards
+
+-(NSInteger)match:(NSArray *)otherCards
+{
+    NSInteger match = 0;
+    if ([otherCards count] == 0) {
+        SCSPlayingCard *otherCard = [otherCards lastObject];
+        if ([self.suit isEqualToString:otherCard.suit]) {
+            match = 1;
+        }
+        else if (self.rank == otherCard.rank) {
+            match = 4;
+        }
+    }
+    return match;
+}
+
 #pragma mark - Class helpers
 
 +(NSArray *)validSuits {
