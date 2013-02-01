@@ -64,7 +64,7 @@
 
     if (!card.isUnplayable) {
         // scoring happens whenever a card is flipped face up
-        if (card.isFaceUp) {
+        if (!card.isFaceUp) {
             for (SCSCard *otherCard in self.cards) {
                 if (otherCard.isFaceUp && !otherCard.isUnplayable) {
                     NSInteger matchScore = [card match:@[otherCard]];
