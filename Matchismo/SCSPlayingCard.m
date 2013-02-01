@@ -44,7 +44,7 @@ static NSArray * RANK_STRINGS = nil;
 -(NSInteger)match:(NSArray *)otherCards
 {
     NSInteger match = 0;
-    if ([otherCards count] == 0) {
+    if ([otherCards count] == 1) {
         SCSPlayingCard *otherCard = [otherCards lastObject];
         if ([self.suit isEqualToString:otherCard.suit]) {
             match = 1;
