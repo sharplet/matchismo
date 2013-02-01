@@ -10,5 +10,5 @@
 #import "SCSPlayingCardDeck.h"
 
 @interface SCSCardGameViewController : UIViewController
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+
 @end
