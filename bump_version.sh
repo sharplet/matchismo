@@ -9,8 +9,9 @@ File.readlines(plist).each do |line|
     is_version_key = false
     line =~ /(.*<string>)(.*)(<\/string>)/
 
-    print "Enter new version (currently #{$2}): "
-    new_version = STDIN.readline.chomp
+    print "Enter new version (currently #{$2}): " unless ARGV[0]
+    new_version = ARGV[0] || STDIN.readline.chomp
+
     new_contents << "#{$1}#{new_version}#{$3}\n"
   else
     new_contents << line
