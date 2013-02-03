@@ -1,5 +1,21 @@
 #!/usr/bin/env ruby
-plist = 'Matchismo/Matchismo-Info.plist'
+plists = Dir['**/*-Info.plist']
+
+plist = nil
+if plists.size > 1
+  plists.each_index do |i|
+    puts "[#{i+1}] #{plists[i]}"
+  end
+
+  print "Select a plist to use (enter a number): "
+  plist_index = STDIN.readline.chomp.to_i - 1
+  plist = plists[plist_index]
+else
+  plist = plists.first
+end
+
+puts "Using #{plist}"
+
 new_contents = []
 new_version = nil
 is_version_key = false
