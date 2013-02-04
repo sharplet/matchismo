@@ -45,12 +45,15 @@ static NSArray * RANK_STRINGS = nil;
 {
     NSInteger match = 0;
     if ([otherCards count] == 1) {
-        SCSPlayingCard *otherCard = [otherCards lastObject];
-        if ([self.suit isEqualToString:otherCard.suit]) {
-            match = 1;
-        }
-        else if (self.rank == otherCard.rank) {
-            match = 4;
+        id otherCard = [otherCards lastObject];
+        if ([otherCard isKindOfClass:[SCSPlayingCard class]]) {
+            SCSPlayingCard *otherPlayingCard = (SCSPlayingCard *)otherCard;
+            if ([self.suit isEqualToString:otherPlayingCard.suit]) {
+                match = 1;
+            }
+            else if (self.rank == otherPlayingCard.rank) {
+                match = 4;
+            }
         }
     }
     return match;
