@@ -14,6 +14,7 @@
 @interface SCSCardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (nonatomic) NSUInteger flipCount;
 @property (strong, nonatomic) SCSCardMatchingGame *game;
@@ -36,6 +37,13 @@
     [self updateUI];
 }
 
+#pragma mark - View lifecycle
+
+-(void)viewDidLoad
+{
+    [self updateUI];
+}
+
 #pragma mark - Updating UI
 
 -(void)updateUI
@@ -49,6 +57,7 @@
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.lastFlipResultLabel.text = [self.game lastFlipResultDescription];
 }
 
 -(void)setFlipCount:(NSUInteger)flipCount

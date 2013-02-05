@@ -16,6 +16,7 @@
 
 -(void)flipCardAtIndex:(NSUInteger)index;
 -(SCSCard *)cardAtIndex:(NSUInteger)index;
+-(NSString *)lastFlipResultDescription;
 
 @property (readonly, nonatomic) NSInteger score;
 
