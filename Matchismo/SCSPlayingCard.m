@@ -39,6 +39,11 @@ static NSArray * RANK_STRINGS = nil;
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
 }
 
+-(NSString *)description
+{
+    return self.contents;
+}
+
 #pragma mark - Matching cards
 
 -(NSInteger)match:(NSArray *)otherCards
