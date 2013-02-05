@@ -15,6 +15,7 @@
 @interface SCSCardMatchingGame()
 @property (readwrite, nonatomic) NSInteger score;
 @property (strong, nonatomic) NSMutableArray *cards;
+@property (nonatomic, getter=isStarted) BOOL started;
 @end
 
 @implementation SCSCardMatchingGame
@@ -63,6 +64,8 @@
     SCSCard *card = [self cardAtIndex:index];
 
     if (!card.isUnplayable) {
+        self.started = YES;
+
         // scoring happens whenever a card is flipped face up
         if (!card.isFaceUp) {
             for (SCSCard *otherCard in self.cards) {
@@ -83,6 +86,15 @@
         }
         card.faceUp = !card.isFaceUp;
     }
+}
+
+-(NSString *)lastFlipResultDescription
+{
+    NSString *description = nil;
+    if (self.isStarted) {
+        description = @"Game has started";
+    }
+    return description;
 }
 
 @end
