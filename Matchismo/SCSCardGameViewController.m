@@ -37,6 +37,16 @@
     [self updateUI];
 }
 
+- (IBAction)redeal
+{
+    // reset the game and flip count
+    self.flipCount = 0;
+    self.game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                     usingDeck:[[SCSPlayingCardDeck alloc] init]];
+
+    [self updateUI];
+}
+
 #pragma mark - View lifecycle
 
 -(void)viewDidLoad
