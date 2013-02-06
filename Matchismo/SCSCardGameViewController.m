@@ -56,14 +56,9 @@
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
+    self.flipCountLabel.text = [NSString stringWithFormat:@"Flips: %d", _flipCount];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.lastFlipResultLabel.text = [self.game lastFlipResultDescription];
-}
-
--(void)setFlipCount:(NSUInteger)flipCount
-{
-    _flipCount = flipCount;
-    self.flipCountLabel.text = [NSString stringWithFormat:@"Flips: %d", _flipCount];
 }
 
 - (IBAction)flipCard:(UIButton *)sender
