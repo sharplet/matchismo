@@ -11,11 +11,11 @@
 
 @implementation SCSPlayingCardFlipResult
 
-+(SCSPlayingCardFlipResult *)flipResultOfType:(SCSCardFlipResult)result
++(SCSPlayingCardFlipResult *)flipResultOfType:(SCSPlayingCardFlipResultType)result
 {
     return [self flipResultOfType:result withCards:nil score:0];
 }
-+(SCSPlayingCardFlipResult *)flipResultOfType:(SCSCardFlipResult)result
++(SCSPlayingCardFlipResult *)flipResultOfType:(SCSPlayingCardFlipResultType)result
                          withCards:(NSArray *)cards
                              score:(NSInteger)score
 {
@@ -26,7 +26,7 @@
 {
     return nil;
 }
--(id)initWithFlipResultType:(SCSCardFlipResult)resultType
+-(id)initWithFlipResultType:(SCSPlayingCardFlipResultType)resultType
                       cards:(NSArray *)cards
                       score:(NSInteger)score
 {
@@ -50,17 +50,17 @@
 -(NSString *)resultDescription
 {
     switch (self.resultType) {
-        case SCSCardFlipResultMatched:
+        case SCSPlayingCardFlipResultTypeMatched:
             return [NSString stringWithFormat:@"Matched %@ and %@ for %d points",
                     self.cards[0],
                     self.cards[1],
                     self.score];
-        case SCSCardFlipResultNotMatched:
+        case SCSPlayingCardFlipResultTypeNotMatched:
             return [NSString stringWithFormat:@"%@ and %@ don't match! %d point penalty!",
                     self.cards[0],
                     self.cards[1],
                     self.score];
-        case SCSCardFlipResultFlippedFaceUp:
+        case SCSPlayingCardFlipResultTypeFaceUp:
             return [NSString stringWithFormat:@"Flipped up %@", [self.cards lastObject]];
         default:
             return nil;

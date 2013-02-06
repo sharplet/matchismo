@@ -8,21 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, SCSCardFlipResult) {
-    SCSCardFlipResultFlippedFaceUp,
-    SCSCardFlipResultFlippedFaceDown,
-    SCSCardFlipResultMatched,
-    SCSCardFlipResultNotMatched
+typedef NS_ENUM(NSInteger, SCSPlayingCardFlipResultType) {
+    SCSPlayingCardFlipResultTypeFaceUp,
+    SCSPlayingCardFlipResultTypeFaceDown,
+    SCSPlayingCardFlipResultTypeMatched,
+    SCSPlayingCardFlipResultTypeNotMatched
 };
 
 @interface SCSPlayingCardFlipResult : NSObject
 
-@property (readonly, nonatomic) SCSCardFlipResult resultType;
+@property (readonly, nonatomic) SCSPlayingCardFlipResultType resultType;
 @property (readonly, strong, nonatomic) NSArray *cards; // of SCSPlayingCard
 @property (readonly, nonatomic) NSInteger score;
 
-+(SCSPlayingCardFlipResult *)flipResultOfType:(SCSCardFlipResult)result;
-+(SCSPlayingCardFlipResult *)flipResultOfType:(SCSCardFlipResult)result
++(SCSPlayingCardFlipResult *)flipResultOfType:(SCSPlayingCardFlipResultType)result;
++(SCSPlayingCardFlipResult *)flipResultOfType:(SCSPlayingCardFlipResultType)result
                                     withCards:(NSArray *)cards
                                         score:(NSInteger)score;
 
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, SCSCardFlipResult) {
 //
 // NOTE: -init will *always* return nil -- the designated initialiser
 // must be used.
--(id)initWithFlipResultType:(SCSCardFlipResult)resultType
+-(id)initWithFlipResultType:(SCSPlayingCardFlipResultType)resultType
                       cards:(NSArray *)cards
                       score:(NSInteger)score;
 

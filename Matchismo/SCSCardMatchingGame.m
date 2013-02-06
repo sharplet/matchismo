@@ -72,7 +72,7 @@
         // scoring happens whenever a card is flipped face up
         if (!card.isFaceUp) {
             // indicate that a card has flipped -- if it also matches, this will be overridden
-            self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSCardFlipResultFlippedFaceUp
+            self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeFaceUp
                                                                    withCards:@[card]
                                                                        score:0];
 
@@ -85,14 +85,14 @@
                         otherCard.unplayable = YES;
                         card.unplayable = YES;
                         self.score += scoreIncrement;
-                        self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSCardFlipResultMatched
+                        self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeMatched
                                                                                withCards:@[card, otherCard]
                                                                                    score:scoreIncrement];
                     }
                     else {
                         otherCard.faceUp = NO;
                         self.score -= MISMATCH_PENALTY;
-                        self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSCardFlipResultNotMatched
+                        self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeNotMatched
                                                                                withCards:@[card, otherCard]
                                                                                    score:MISMATCH_PENALTY];
                     }
@@ -102,7 +102,7 @@
         }
         else {
             // card was flipped face down
-            self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSCardFlipResultFlippedFaceDown];
+            self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeFaceDown];
         }
 
         // flip the card
