@@ -27,6 +27,7 @@
     if (!_game) {
         _game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                      usingDeck:[[SCSPlayingCardDeck alloc] init]];
+        _game.mode = SCSCardMatchingGameMatchMode2Cards;
     }
     return _game;
 }
@@ -34,16 +35,6 @@
 -(void)setCardButtons:(NSArray *)cardButtons
 {
     _cardButtons = cardButtons;
-    [self updateUI];
-}
-
-- (IBAction)redeal
-{
-    // reset the game and flip count
-    self.flipCount = 0;
-    self.game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                                     usingDeck:[[SCSPlayingCardDeck alloc] init]];
-
     [self updateUI];
 }
 
@@ -71,11 +62,33 @@
     self.lastFlipResultLabel.text = [self.game lastFlipResultDescription];
 }
 
+#pragma mark - Controller actions
+
 - (IBAction)flipCard:(UIButton *)sender
 {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+}
+
+- (IBAction)redeal
+{
+    // reset the game and flip count
+    self.flipCount = 0;
+    self.game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                     usingDeck:[[SCSPlayingCardDeck alloc] init]];
+
+    [self updateUI];
+}
+
+- (IBAction)setNumberOfCardsToMatch:(UISegmentedControl *)sender
+{
+    if (sender.selectedSegmentIndex == 0) {
+        self.game.mode = SCSCardMatchingGameMatchMode2Cards;
+    }
+    else if (sender.selectedSegmentIndex == 1) {
+        self.game.mode = SCSCardMatchingGameMatchMode3Cards;
+    }
 }
 
 @end

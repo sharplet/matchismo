@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "SCSDeck.h"
 
+typedef NS_ENUM(NSUInteger, SCSCardMatchingGameMatchMode) {
+    SCSCardMatchingGameMatchMode2Cards,
+    SCSCardMatchingGameMatchMode3Cards
+};
+
 @interface SCSCardMatchingGame : NSObject
 
 -(id)initWithCardCount:(NSUInteger)cardCount
@@ -19,5 +24,6 @@
 -(NSString *)lastFlipResultDescription;
 
 @property (readonly, nonatomic) NSInteger score;
+@property (nonatomic) SCSCardMatchingGameMatchMode mode;
 
 @end

@@ -315,6 +315,9 @@
                                         <size key="contentOffset" width="-1" height="0.0"/>
                                     </segment>
                                 </segments>
+                                <connections>
+                                    <action selector="setNumberOfCardsToMatch:" destination="amu-NW-kex" eventType="valueChanged" id="LTU-JH-bhR"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -352,6 +355,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SCSCardGameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="action" name="setNumberOfCardsToMatch:" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="flipCountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
