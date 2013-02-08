@@ -110,7 +110,7 @@
                 }
                 // otherwise, we had a partial match
                 else {
-                    // do something with a partial match
+                    [self.cardsAlreadyInPlay addObject:card];
                 }
             }
             // there were no cards already in play, so put this one in play
