@@ -27,7 +27,7 @@
     if (!_game) {
         _game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                      usingDeck:[[SCSPlayingCardDeck alloc] init]];
-        _game.mode = SCSCardMatchingGameMatchMode2Cards;
+        _game.mode = [[SCSCardMatchingMode alloc] initWithNumberOfCardsToMatch:2];
     }
     return _game;
 }
@@ -84,10 +84,10 @@
 - (IBAction)setNumberOfCardsToMatch:(UISegmentedControl *)sender
 {
     if (sender.selectedSegmentIndex == 0) {
-        self.game.mode = SCSCardMatchingGameMatchMode2Cards;
+        self.game.mode = [[SCSCardMatchingMode alloc] initWithNumberOfCardsToMatch:2];
     }
     else if (sender.selectedSegmentIndex == 1) {
-        self.game.mode = SCSCardMatchingGameMatchMode3Cards;
+        self.game.mode = [[SCSCardMatchingMode alloc] initWithNumberOfCardsToMatch:3];
     }
 }
 

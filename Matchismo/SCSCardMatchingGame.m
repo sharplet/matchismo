@@ -9,13 +9,10 @@
 #import "SCSCardMatchingGame.h"
 #import "SCSPlayingCardFlipResult.h"
 
-#define FLIP_COST 1
-#define MATCH_BONUS 4
-#define MISMATCH_PENALTY 2
-
 @interface SCSCardMatchingGame()
 @property (readwrite, nonatomic) NSInteger score;
 @property (strong, nonatomic) NSMutableArray *cards;
+@property (strong, nonatomic) NSMutableArray *cardsAlreadyInPlay;
 @property (nonatomic, getter=isStarted) BOOL started;
 @property (strong, nonatomic) SCSPlayingCardFlipResult *lastFlipResult;
 @end
@@ -28,6 +25,13 @@
         _cards = [[NSMutableArray alloc] init];
     }
     return _cards;
+}
+-(NSMutableArray *)cardsAlreadyInPlay
+{
+    if (!_cardsAlreadyInPlay) {
+        _cardsAlreadyInPlay = [[NSMutableArray alloc] init];
+    }
+    return _cardsAlreadyInPlay;
 }
 
 #pragma mark - Designated initialiser
@@ -69,40 +73,57 @@
         // a card is being flipped, indicate that the game has started
         self.started = YES;
 
-        // scoring happens whenever a card is flipped face up
         if (!card.isFaceUp) {
             // indicate that a card has flipped -- if it also matches, this will be overridden
             self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeFaceUp
                                                                    withCards:@[card]
                                                                        score:0];
 
-            // search for a matching card
-            for (SCSCard *otherCard in self.cards) {
-                if (otherCard.isFaceUp && !otherCard.isUnplayable) {
-                    NSInteger matchScore = [card match:@[otherCard]];
-                    if (matchScore) {
-                        NSInteger scoreIncrement = matchScore * MATCH_BONUS;
-                        otherCard.unplayable = YES;
-                        card.unplayable = YES;
-                        self.score += scoreIncrement;
-                        self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeMatched
-                                                                               withCards:@[card, otherCard]
-                                                                                   score:scoreIncrement];
-                    }
-                    else {
+            // if there are already cards in play, try and match them
+            if ([self.cardsAlreadyInPlay count] > 0) {
+                NSInteger matchScore = [card match:self.cardsAlreadyInPlay];
+                NSArray *cardsInMatch = [self.cardsAlreadyInPlay arrayByAddingObject:card];
+
+                // check if we've matched all the cards in this mode
+                if (matchScore && [cardsInMatch count] == self.mode.cardsToMatch) {
+                    NSInteger scoreIncrement = matchScore * self.mode.matchBonus;
+                    [cardsInMatch enumerateObjectsUsingBlock:^(SCSCard *cardInMatch, NSUInteger index, BOOL *stop) {
+                        cardInMatch.unplayable = YES;
+                    }];
+                    self.score += scoreIncrement;
+                    self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeMatched
+                                                                           withCards:cardsInMatch
+                                                                               score:scoreIncrement];
+                    [self.cardsAlreadyInPlay removeAllObjects];
+                }
+                // if we had a mismatch (i.e., score was 0)
+                else if (!matchScore) {
+                    [self.cardsAlreadyInPlay enumerateObjectsUsingBlock:^(SCSCard *otherCard, NSUInteger index, BOOL *stop) {
                         otherCard.faceUp = NO;
-                        self.score -= MISMATCH_PENALTY;
-                        self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeNotMatched
-                                                                               withCards:@[card, otherCard]
-                                                                                   score:MISMATCH_PENALTY];
-                    }
+                    }];
+                    self.score -= self.mode.mismatchPenalty;
+                    self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeNotMatched
+                                                                           withCards:cardsInMatch
+                                                                               score:-self.mode.mismatchPenalty];
+                    [self.cardsAlreadyInPlay removeAllObjects];
+                    [self.cardsAlreadyInPlay addObject:card];
+                }
+                // otherwise, we had a partial match
+                else {
+                    // do something with a partial match
                 }
             }
-            self.score -= FLIP_COST;
+            // there were no cards already in play, so put this one in play
+            else {
+                [self.cardsAlreadyInPlay addObject:card];
+            }
+
+            self.score -= self.mode.flipCost;
         }
         else {
             // card was flipped face down
             self.lastFlipResult = [SCSPlayingCardFlipResult flipResultOfType:SCSPlayingCardFlipResultTypeFaceDown];
+            [self.cardsAlreadyInPlay removeObject:card];
         }
 
         // flip the card

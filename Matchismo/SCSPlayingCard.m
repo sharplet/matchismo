@@ -8,10 +8,6 @@
 
 #import "SCSPlayingCard.h"
 
-@interface SCSPlayingCard()
-
-@end
-
 static NSArray * VALID_SUITS = nil;
 static NSArray * RANK_STRINGS = nil;
 

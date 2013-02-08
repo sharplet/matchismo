@@ -24,6 +24,7 @@
 		4AEEF3A716B3765D006D8012 /* SCSPlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEEF3A616B3765D006D8012 /* SCSPlayingCardDeck.m */; };
 		CE4620A016BB0DD600A80DC2 /* SCSCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */; };
 		CE5C69BE16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C69BD16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m */; };
+		CE5C69C516C43E1C000FC7D5 /* SCSCardMatchingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C69C416C43E1C000FC7D5 /* SCSCardMatchingMode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSCardMatchingGame.m; sourceTree = "<group>"; };
 		CE5C69BC16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSPlayingCardFlipResult.h; sourceTree = "<group>"; };
 		CE5C69BD16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSPlayingCardFlipResult.m; sourceTree = "<group>"; };
+		CE5C69C316C43E1C000FC7D5 /* SCSCardMatchingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSCardMatchingMode.h; sourceTree = "<group>"; };
+		CE5C69C416C43E1C000FC7D5 /* SCSCardMatchingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSCardMatchingMode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */,
 				CE5C69BC16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.h */,
 				CE5C69BD16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m */,
+				CE5C69C316C43E1C000FC7D5 /* SCSCardMatchingMode.h */,
+				CE5C69C416C43E1C000FC7D5 /* SCSCardMatchingMode.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				4A1C6FB216B9269700FA0A77 /* SCSCardGameViewController.m in Sources */,
 				CE4620A016BB0DD600A80DC2 /* SCSCardMatchingGame.m in Sources */,
 				CE5C69BE16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m in Sources */,
+				CE5C69C516C43E1C000FC7D5 /* SCSCardMatchingMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
