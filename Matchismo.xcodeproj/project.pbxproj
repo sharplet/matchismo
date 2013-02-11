@@ -25,6 +25,7 @@
 		CE4620A016BB0DD600A80DC2 /* SCSCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46209F16BB0DD600A80DC2 /* SCSCardMatchingGame.m */; };
 		CE5C69BE16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C69BD16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m */; };
 		CE5C69C516C43E1C000FC7D5 /* SCSCardMatchingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C69C416C43E1C000FC7D5 /* SCSCardMatchingMode.m */; };
+		CE9C10A216C8E62000ACB384 /* SCSCardGameResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C10A116C8E62000ACB384 /* SCSCardGameResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		CE5C69BD16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSPlayingCardFlipResult.m; sourceTree = "<group>"; };
 		CE5C69C316C43E1C000FC7D5 /* SCSCardMatchingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSCardMatchingMode.h; sourceTree = "<group>"; };
 		CE5C69C416C43E1C000FC7D5 /* SCSCardMatchingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSCardMatchingMode.m; sourceTree = "<group>"; };
+		CE9C10A016C8E62000ACB384 /* SCSCardGameResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCSCardGameResultsViewController.h; path = Matchismo/SCSCardGameResultsViewController.h; sourceTree = "<group>"; };
+		CE9C10A116C8E62000ACB384 /* SCSCardGameResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCSCardGameResultsViewController.m; path = Matchismo/SCSCardGameResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 		4AA9928E16B3757600464580 = {
 			isa = PBXGroup;
 			children = (
+				CE9C10A016C8E62000ACB384 /* SCSCardGameResultsViewController.h */,
+				CE9C10A116C8E62000ACB384 /* SCSCardGameResultsViewController.m */,
 				4AA992A316B3757600464580 /* Matchismo */,
 				4AA9929C16B3757600464580 /* Frameworks */,
 				4AA9929A16B3757600464580 /* Products */,
@@ -227,6 +232,7 @@
 				CE4620A016BB0DD600A80DC2 /* SCSCardMatchingGame.m in Sources */,
 				CE5C69BE16C2FCA6000FC7D5 /* SCSPlayingCardFlipResult.m in Sources */,
 				CE5C69C516C43E1C000FC7D5 /* SCSCardMatchingMode.m in Sources */,
+				CE9C10A216C8E62000ACB384 /* SCSCardGameResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
