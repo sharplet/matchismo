@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SCSDeck.h"
+#import "SCSCardMatchingMode.h"
 
 @interface SCSCardMatchingGame : NSObject
 
@@ -19,5 +20,6 @@
 -(NSString *)lastFlipResultDescription;
 
 @property (readonly, nonatomic) NSInteger score;
+@property (strong, nonatomic) SCSCardMatchingMode *mode;
 
 @end

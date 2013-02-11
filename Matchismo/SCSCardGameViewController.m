@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (nonatomic) NSUInteger flipCount;
 @property (strong, nonatomic) SCSCardMatchingGame *game;
+@property (strong, nonatomic) SCSCardMatchingMode *mode;
 @end
 
 @implementation SCSCardGameViewController
@@ -27,6 +28,8 @@
     if (!_game) {
         _game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                      usingDeck:[[SCSPlayingCardDeck alloc] init]];
+        _mode = [[SCSCardMatchingMode alloc] initWithNumberOfCardsToMatch:2];
+        _game.mode = _mode;
     }
     return _game;
 }
@@ -34,16 +37,6 @@
 -(void)setCardButtons:(NSArray *)cardButtons
 {
     _cardButtons = cardButtons;
-    [self updateUI];
-}
-
-- (IBAction)redeal
-{
-    // reset the game and flip count
-    self.flipCount = 0;
-    self.game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                                     usingDeck:[[SCSPlayingCardDeck alloc] init]];
-
     [self updateUI];
 }
 
@@ -71,11 +64,34 @@
     self.lastFlipResultLabel.text = [self.game lastFlipResultDescription];
 }
 
+#pragma mark - Controller actions
+
 - (IBAction)flipCard:(UIButton *)sender
 {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+}
+
+- (IBAction)redeal
+{
+    // reset the game and flip count
+    self.flipCount = 0;
+    self.game = [[SCSCardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                                     usingDeck:[[SCSPlayingCardDeck alloc] init]];
+    self.game.mode = self.mode;
+    [self updateUI];
+}
+
+- (IBAction)setNumberOfCardsToMatch:(UISegmentedControl *)sender
+{
+    if (sender.selectedSegmentIndex == 0) {
+        self.mode = [[SCSCardMatchingMode alloc] initWithNumberOfCardsToMatch:2];
+    }
+    else if (sender.selectedSegmentIndex == 1) {
+        self.mode = [[SCSCardMatchingMode alloc] initWithNumberOfCardsToMatch:3];
+    }
+    [self redeal];
 }
 
 @end

@@ -8,10 +8,6 @@
 
 #import "SCSPlayingCard.h"
 
-@interface SCSPlayingCard()
-
-@end
-
 static NSArray * VALID_SUITS = nil;
 static NSArray * RANK_STRINGS = nil;
 
@@ -49,18 +45,35 @@ static NSArray * RANK_STRINGS = nil;
 -(NSInteger)match:(NSArray *)otherCards
 {
     NSInteger match = 0;
-    if ([otherCards count] == 1) {
-        id otherCard = [otherCards lastObject];
-        if ([otherCard isKindOfClass:[SCSPlayingCard class]]) {
-            SCSPlayingCard *otherPlayingCard = (SCSPlayingCard *)otherCard;
-            if ([self.suit isEqualToString:otherPlayingCard.suit]) {
-                match = 1;
-            }
-            else if (self.rank == otherPlayingCard.rank) {
-                match = 4;
+    NSUInteger suitMatches = 0;
+    NSUInteger rankMatches = 0;
+
+    if ([otherCards count] > 0) {
+        // match this card against each other card, and count the types of match
+        for (id otherCard in otherCards) {
+            if ([otherCard isKindOfClass:[SCSPlayingCard class]]) {
+                SCSPlayingCard *otherPlayingCard = (SCSPlayingCard *)otherCard;
+                if ([self.suit isEqualToString:otherPlayingCard.suit]) {
+                    suitMatches++;                }
+                else if (self.rank == otherPlayingCard.rank) {
+                    rankMatches++;
+                }
             }
         }
+
+        // if we matched each card the same way, set the base score
+        // depending on difficulty
+        if (suitMatches == [otherCards count]) {
+            match = 2;
+        }
+        else if (rankMatches == [otherCards count]) {
+            match = 4;
+        }
+
+        // apply a bonus multiplier for the number of cards in the match
+        match *= [otherCards count];
     }
+
     return match;
 }
 
