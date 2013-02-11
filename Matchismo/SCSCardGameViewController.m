@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *modeChangeControl;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (nonatomic) NSUInteger flipCount;
 @property (strong, nonatomic) SCSCardMatchingGame *game;
@@ -62,6 +63,7 @@
     self.flipCountLabel.text = [NSString stringWithFormat:@"Flips: %d", _flipCount];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.lastFlipResultLabel.text = [self.game lastFlipResultDescription];
+    self.modeChangeControl.enabled = !self.game.isStarted;
 }
 
 #pragma mark - Controller actions

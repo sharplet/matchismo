@@ -13,7 +13,7 @@
 @property (readwrite, nonatomic) NSInteger score;
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (strong, nonatomic) NSMutableArray *cardsAlreadyInPlay;
-@property (nonatomic, getter=isStarted) BOOL started;
+@property (readwrite, nonatomic, getter=isStarted) BOOL started;
 @property (strong, nonatomic) SCSPlayingCardFlipResult *lastFlipResult;
 @end
 

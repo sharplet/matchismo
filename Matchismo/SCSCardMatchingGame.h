@@ -21,5 +21,6 @@
 
 @property (readonly, nonatomic) NSInteger score;
 @property (strong, nonatomic) SCSCardMatchingMode *mode;
+@property (readonly, nonatomic, getter=isStarted) BOOL started;
 
 @end

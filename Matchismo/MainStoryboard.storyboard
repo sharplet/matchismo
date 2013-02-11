@@ -326,6 +326,7 @@
                     <connections>
                         <outlet property="flipCountLabel" destination="Rc4-pd-oTL" id="OIK-X1-VE7"/>
                         <outlet property="lastFlipResultLabel" destination="76b-ym-I7d" id="u2X-fe-wPq"/>
+                        <outlet property="modeChangeControl" destination="8ZK-H1-4C6" id="iUx-LQ-eUK"/>
                         <outlet property="scoreLabel" destination="5h2-tQ-Fki" id="oo7-qe-JmQ"/>
                         <outletCollection property="cardButtons" destination="dpE-dV-90A" id="Bm2-He-BVq"/>
                         <outletCollection property="cardButtons" destination="eFG-ID-Z7x" id="e2q-Yv-Vbi"/>
@@ -347,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCh-MU-k8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-296" y="0.0"/>
+            <point key="canvasLocation" x="-380" y="-18"/>
         </scene>
     </scenes>
     <classes>
@@ -358,6 +359,7 @@
                 <relationship kind="action" name="setNumberOfCardsToMatch:" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="flipCountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="modeChangeControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
