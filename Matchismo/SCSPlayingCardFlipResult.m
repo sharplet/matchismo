@@ -47,18 +47,29 @@
     return self;
 }
 
+-(NSString *)cardListString
+{
+    NSString *cardListString;
+    if ([self.cards count] > 1) {
+        NSIndexSet *commaSeparatedCardIndexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.cards count]-1)];
+        NSArray *commaSeparatedCards = [self.cards objectsAtIndexes:commaSeparatedCardIndexes];
+        cardListString = [NSString stringWithFormat:@"%@ and %@", [commaSeparatedCards componentsJoinedByString:@", "], [self.cards lastObject]];
+    }
+    else {
+        cardListString = [[self.cards lastObject] description];
+    }
+    return cardListString;
+}
 -(NSString *)resultDescription
 {
     switch (self.resultType) {
         case SCSPlayingCardFlipResultTypeMatched:
-            return [NSString stringWithFormat:@"Matched %@ and %@ for %d points",
-                    self.cards[0],
-                    self.cards[1],
+            return [NSString stringWithFormat:@"Matched %@ for %d points",
+                    [self cardListString],
                     self.score];
         case SCSPlayingCardFlipResultTypeNotMatched:
-            return [NSString stringWithFormat:@"%@ and %@ don't match! %d point penalty!",
-                    self.cards[0],
-                    self.cards[1],
+            return [NSString stringWithFormat:@"%@ don't match! %d point penalty!",
+                    [self cardListString],
                     self.score];
         case SCSPlayingCardFlipResultTypeFaceUp:
             return [NSString stringWithFormat:@"Flipped up %@", [self.cards lastObject]];
